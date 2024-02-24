@@ -5,6 +5,7 @@
 } */
 #ramb {
     display: flex;
+    margin-bottom: 10px;
 }
 #ram {
     background-color: #1a8db4;

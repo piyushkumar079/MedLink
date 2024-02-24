@@ -33,7 +33,7 @@ const BedsAvailability = () => {
   };
 
   return (
-    <div className="container" style={{ display: 'flex', flexDirection: 'column' }}>
+    <div className="container" style={{ display: 'flex', flexDirection: 'column' , marginBottom:'110px', width:"96%"}}>
       <label htmlFor="states">States:</label>
       <select id="states" onChange={handleStateChange} style={{ padding: '5px' }}>
         <option value="" disabled selected>Select States</option>
@@ -50,7 +50,7 @@ const BedsAvailability = () => {
       </select>
 
       <div style={{ padding: '10px auto' }}>
-        <button className="btn btn-primary btn-md" style={{ padding: '8px 15px', margin: '25px 190px', color: 'white', textDecoration: 'none' }} onClick={handleSubmit}>
+        <button className="btn btn-primary btn-md" style={{ padding: '10px 10px', marginTop:'10px', color: 'white', textDecoration: 'none' }} onClick={handleSubmit}>
           Submit
         </button>
       </div>

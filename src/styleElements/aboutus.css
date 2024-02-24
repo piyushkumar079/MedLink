@@ -210,6 +210,9 @@ li:hover {
     width: 80%;
     margin: auto;
 }
+.container.flex{
+    width: 95%;
+}
 
 .about{
     display: flex;

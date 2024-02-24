@@ -1,10 +1,10 @@
 footer {
     color: white;
     background: #046585;
-    padding-top: 50px;
+    padding-top: 10px;
     width: 100vw;
     position: sticky;
-    top: 100vh;
+    top: 100px;
     background-color: #27859f;
 }
 
@@ -13,6 +13,7 @@ footer {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    height: fit-content;
 }
 
 .footer-content {
@@ -35,7 +36,7 @@ footer {
 
 
 footer h3 {
-    font-size: 28px;
+    font-size: 25px;
     margin-bottom: 15px;
     text-align: center;
 }
@@ -111,7 +112,7 @@ a:hover {
     background: #27859f;
     text-align: center;
     padding: 10px 0;
-    margin-top: 50px;
+    margin-top: 7px;
 }
 
 .bottom-bar p {
