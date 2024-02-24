@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 import "../styleElements/login.css"
 const Login = () => {
   return (
-    <><body id="ramb">
-      <div id="ram">
+    <><body id="ramb" style={{marginBottom: '10px'}}>
+      <div id="ram" >
         <div id="krishna">
           <form action="#">
             <img src={hospitalImage} alt="" id="medlink" />

@@ -4,7 +4,7 @@ import img from "../utils/img/aboutus.jpg"
 
 const AboutUs=()=>{
     return(  
-    <div className="container">
+    <div className="container" style={{width: '97%' }}>
     <div className="heading">
         <h1>ABOUT US</h1>
         <p>The project aims to create a user-friendly app and
@@ -16,7 +16,7 @@ const AboutUs=()=>{
             directory of attending doctors and available medical
             amenities for each hospital</p>
     </div>
-    <div className="container flex">
+    <div className="container flex" style={{width: '97%' }}>
 
         <div className="about-image">
             <img src={img} alt="xyz"/>
