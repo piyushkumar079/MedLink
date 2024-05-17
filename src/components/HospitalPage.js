@@ -14,7 +14,7 @@ const HospitalPage = () => {
               setList(data);
               console.log(data);
             } catch (error) {
-                console.error('Error fetching hospital data:', error);
+                console.error('Mayank did this:', error);
             }
         };
         fetchHospitalData();
