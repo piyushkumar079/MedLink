@@ -16,6 +16,7 @@ const Signup = () => {
   const [otps, setOtps] = useState(false);
   const [otp, setOtp] = useState("");
   const [clicked, setClicked] = useState(true);
+  const [dis,setDis]=useState(false);
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -89,6 +90,7 @@ const Signup = () => {
   };
 
   const signUp = async () => {
+    setDis(1);
     try {
       const data = {
         firstName,
@@ -106,6 +108,8 @@ const Signup = () => {
       const responseJson = await response.json();
       if (responseJson.status !== 200) {
         toast.error(responseJson.message);
+        setDis(0);
+
       } else {
         setClicked(false);
         setOtps(true);
@@ -208,6 +212,7 @@ const Signup = () => {
                   type="button"
                   className="bg-[#046585] w-[6vw] rounded-xl text-white py-2 hover:bg-[#034b60] duration-300"
                   onClick={signUp}
+                  disabled={dis}
                 >
                   Signup
                 </button>

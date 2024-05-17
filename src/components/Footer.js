@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <footer className="bg-gray-800 text-white py-12">
@@ -15,20 +15,20 @@ const Footer = () => {
           <div className="footer-content md:text-left">
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="list">
-              <li><a href="/" className="text-blue-300 hover:text-blue-400 transition duration-300">Home</a></li>
-              <li><a href="/" className="text-blue-300 hover:text-blue-400 transition duration-300">About Us</a></li>
-              <li><a href="/" className="text-blue-300 hover:text-blue-400 transition duration-300">Services</a></li>
-              <li><a href="/" className="text-blue-300 hover:text-blue-400 transition duration-300">Consult online</a></li>
-              <li><a href="/" className="text-blue-300 hover:text-blue-400 transition duration-300">Book Appointment</a></li>
+              <li><Link to="/" className="text-blue-300 hover:text-blue-400 transition duration-300">Home</Link></li>
+              <li><Link to="/about" className="text-blue-300 hover:text-blue-400 transition duration-300">About Us</Link></li>
+              <li><Link to="/" className="text-blue-300 hover:text-blue-400 transition duration-300">Services</Link></li>
+              <li><Link to="/appointments" className="text-blue-300 hover:text-blue-400 transition duration-300">Consult online</Link></li>
+              <li><Link to="/appointments" className="text-blue-300 hover:text-blue-400 transition duration-300">Book Appointment</Link></li>
             </ul>
           </div>
           <div className="footer-content md:text-left">
             <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
             <ul className="flex justify-center md:justify-start space-x-4">
-              <li><a href="/" className="text-blue-300 hover:text-blue-400 transition duration-300"><i className="fab fa-facebook"></i></a></li>
-              <li><a href="/" className="text-blue-300 hover:text-blue-400 transition duration-300"><i className="fab fa-twitter"></i></a></li>
-              <li><a href="/" className="text-blue-300 hover:text-blue-400 transition duration-300"><i className="fab fa-instagram"></i></a></li>
-              <li><a href="/" className="text-blue-300 hover:text-blue-400 transition duration-300"><i className="fab fa-linkedin"></i></a></li>
+              <li><a href="https://facebook.com" target='_blank' rel='noreferrer' className="text-blue-300 hover:text-blue-400 transition duration-300"><i className="fab fa-facebook"></i></a></li>
+              <li><a href="https://x.com" target='_blank' rel='noreferrer' className="text-blue-300 hover:text-blue-400 transition duration-300"><i className="fab fa-twitter"></i></a></li>
+              <li><a href="https://instagram.com" target='_blank' rel='noreferrer' className="text-blue-300 hover:text-blue-400 transition duration-300"><i className="fab fa-instagram"></i></a></li>
+              <li><a href="https://linkedin.com" target='_blank' rel='noreferrer' className="text-blue-300 hover:text-blue-400 transition duration-300"><i className="fab fa-linkedin"></i></a></li>
             </ul>
           </div>
         </div>

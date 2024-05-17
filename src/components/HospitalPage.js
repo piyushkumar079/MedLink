@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import "../styleElements/hospitalpage.css";
 import HospitalDetails from './HospitalDetails';
-
+import Loader from './Loader';
 const HospitalPage = () => {
     const { location } = useParams();
     const [list, setList] = useState([]);
@@ -21,15 +20,13 @@ const HospitalPage = () => {
         fetchHospitalData();
     }, [location]);
 
-    return (
-        <div>
-            {/* <h2>Hospital List</h2> */}
-            <p style={{marginLeft:"15px", fontSize: '20px', fontWeight: 'bold' }}>Location: {location}</p>
-            <div style={{display:"flex"}}>
+    return list.length===0 ?(<Loader />):(
+        <div className="p-4">
+            <p className="ml-4 text-lg font-bold">Location: {location}</p>
+            <div className="flex flex-wrap">
             {list.map((hospital) => (
                 <HospitalDetails key={hospital.id} {...hospital} />
-            ))
-            }
+            ))}
             </div>
         </div>
     );
