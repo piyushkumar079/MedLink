@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import '../styleElements/contact.css';
 
 const Contact = () => {
   const navigate = useNavigate();
@@ -10,6 +11,7 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (fullName === '') {
       toast.error("Full name cannot be empty");
     } else if (email === '') {
@@ -19,67 +21,113 @@ const Contact = () => {
     } else {
       const user = { fullName, email, message };
       console.log(user);
-      fetch("http://localhost:4001/contact", {
+      fetch("/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(user)
       }).then(() => {
         console.log("Information sent");
-        toast.error("Response sent");
+        toast.success("Response sent");
         navigate("/");
       });
     }
   };
 
   return (
-    <section className="max-w-lg mx-auto p-4 mt-8">
-      <h2 className="text-2xl font-semibold mb-4">Contact Us</h2>
-      <form id="contact-form" onSubmit={handleSubmit} className="space-y-4">
-        <div className="space-y-2">
-          <label htmlFor="fullName" className="block text-lg">Full Name</label>
-          <input 
-            type="text" 
-            id="fullName" 
-            value={fullName} 
-            onChange={(e) => setFullName(e.target.value)}
-            className="w-full p-2 border border-gray-300 rounded" 
-            required 
-          />
+    <div id="saiContact">
+      <section>
+    
+        <div className="section-header">
+          <div className="contactcontainer">
+            <h2>Contact Us</h2>
+            <p>We are committed to providing fast, reliable, and accessible healthcare solutions to ensure you and your loved ones receive the best possible care when you need it the most.please send us a message if you have any queries</p>
+          </div>
         </div>
-
-        <div className="space-y-2">
-          <label htmlFor="email" className="block text-lg">Email</label>
-          <input 
-            type="email" 
-            id="email" 
-            value={email} 
-            onChange={(e) => setEmail(e.target.value)}
-            className="w-full p-2 border border-gray-300 rounded" 
-            required 
-          />
+    
+        <div className="container">
+          <div className="row">
+            
+            <div className="contact-info">
+              <div className="contact-info-item">
+                <div className="contact-info-icon">
+                  <i className="fas fa-home"></i>
+                </div>
+                
+                <div className="contact-info-content">
+                  <h4>Address</h4>
+                  <p>Chak Ganjaria, C, G. City, ,<br/>  Lucknow, Ahmamau, Uttar Pradesh <br/>226002</p>
+                </div>
+              </div>
+              
+              <div className="contact-info-item">
+                <div className="contact-info-icon">
+                  <i className="fas fa-phone"></i>
+                </div>
+                
+                <div className="contact-info-content">
+                  <h4>Phone</h4>
+                  <p>+919346270346</p>
+                </div>
+              </div>
+              
+              <div className="contact-info-item">
+                <div className="contact-info-icon">
+                  <i className="fas fa-envelope"></i>
+                </div>
+                
+                <div className="contact-info-content">
+                  <h4>Email</h4>
+                  <p>testuser11228@gmail.com</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="contact-form">
+              <form action="" id="contact-form">
+                <h2>Send Message</h2>
+                <div className="input-box">
+                  <input 
+                    type="text" 
+                    onChange={(e) => setFullName(e.target.value)}
+                    required="true" 
+                    name="full-name"
+                  />
+                  <span>Full Name</span>
+                </div>
+                
+                <div className="input-box">
+                  <input 
+                    type="email" 
+                    onChange={(e) => setEmail(e.target.value)}
+                    required="true" 
+                    name="email"
+                  />
+                  <span>Email</span>
+                </div>
+                
+                <div className="input-box">
+                  <textarea 
+                    required="true" 
+                    onChange={(e) => setMessage(e.target.value)}
+                    name="message"
+                  ></textarea>
+                  <span>Type your Message...</span>
+                </div>
+                
+                <div className="input-box">
+                  <input 
+                    type="submit" 
+                    value="Send" 
+                    onClick={handleSubmit}
+                    name="submit"
+                  />
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
-
-        <div className="space-y-2">
-          <label htmlFor="message" className="block text-lg">Message</label>
-          <textarea 
-            id="message" 
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-            className="w-full p-2 border border-gray-300 rounded h-32" 
-            required
-          ></textarea>
-        </div>
-
-        <div>
-          <button 
-            type="submit" 
-            className="w-full py-2 px-4 bg-blue-600 text-white rounded hover:bg-blue-700 transition duration-200"
-          >
-            Send Message
-          </button>
-        </div>
-      </form>
-    </section>
+      </section>
+    </div>
   );
 };
 
