@@ -9,12 +9,12 @@ const HospitalPage = () => {
     useEffect(() => {
         const fetchHospitalData = async () => {
             try {
-              const response = await fetch(`http://13.60.28.39:4000/hospitals/${location}`);
+              const response = await fetch(`//13.60.28.39:4000/hospitals/${location}`);
               const data = await response.json();
               setList(data);
               console.log(data);
             } catch (error) {
-                console.error('Satyam did this:', error);
+                console.error('piyush did this:', error);
             }
         };
         fetchHospitalData();
