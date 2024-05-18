@@ -98,7 +98,7 @@ const Signup = () => {
         email,
         password,
       };
-      const response = await fetch("/register", {
+      const response = await fetch("http://13.60.28.39:4000/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
