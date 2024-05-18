@@ -59,7 +59,7 @@ const BedsAvailability = () => {
         )}
 
         <div className="text-center">
-          <Link to={`/hospital/beds/${selectedCity}`}>
+          <Link to={`http://13.60.28.39:4000/hospital/beds/${selectedCity}`}>
             <button 
               className={`bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded transition duration-300 ${!selectedCity && 'opacity-50 cursor-not-allowed'}`}
               onClick={handleSubmit}

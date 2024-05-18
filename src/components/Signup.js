@@ -62,7 +62,7 @@ const Signup = () => {
     } else {
       try {
         const response = await fetch(
-          `/verify-account?email=${email}&otp=${otp}`,
+          `http://13.60.28.39:4000/verify-account?email=${email}&otp=${otp}`,
           {
             method: "PUT",
             headers: {

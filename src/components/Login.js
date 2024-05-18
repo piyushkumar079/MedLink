@@ -28,7 +28,7 @@ const Login = () => {
       toast.error("Please enter password");
     } else {
       try {
-        const response = await fetch("/login", {
+        const response = await fetch("http://13.60.28.39:4000/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
