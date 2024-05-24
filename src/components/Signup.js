@@ -62,7 +62,7 @@ const Signup = () => {
     } else {
       try {
         const response = await fetch(
-          `http://13.60.28.39:4000/verify-account?email=${email}&otp=${otp}`,
+          `http://16.16.173.47:4000/verify-account?email=${email}&otp=${otp}`,
           {
             method: "PUT",
             headers: {
@@ -98,7 +98,7 @@ const Signup = () => {
         email,
         password,
       };
-      const response = await fetch("http://13.60.28.39:4000/register", {
+      const response = await fetch("http://16.16.173.47:4000/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

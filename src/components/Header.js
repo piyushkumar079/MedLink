@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { jwtDecode } from "jwt-decode";
+import {jwtDecode} from "jwt-decode";
 
 const Header = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
   const loginToken = localStorage.getItem("logintoken");
   let sub;
@@ -40,7 +41,28 @@ const Header = () => {
             <h1 className="text-2xl">Medlink Services</h1>
           </Link>
         </div>
-        <ul className="flex items-center space-x-6">
+        <div className="lg:hidden">
+          <button
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="text-gray-900 focus:outline-none"
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d={isMobileMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"}
+              />
+            </svg>
+          </button>
+        </div>
+        <ul className={`lg:flex items-center space-x-6 ${isMobileMenuOpen ? "block" : "hidden"} lg:block`}>
           <NavItem to="/">Home</NavItem>
           <NavItem to="/hospital">Beds Availability</NavItem>
           <NavItem to="/appointments">Book Appointment</NavItem>
@@ -71,7 +93,7 @@ const Header = () => {
 };
 
 const NavItem = ({ to, children, className }) => (
-  <li>
+  <li className="my-2 lg:my-0">
     <Link
       to={to}
       className={`text-gray-900 hover:text-blue-600 transition duration-300 ${className}`}

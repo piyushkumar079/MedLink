@@ -13,7 +13,7 @@ const AppoitmentTable = () => {
   
   useEffect(() => {
     (async () => {
-      const response = await fetch(`http://13.60.28.39:4000/appointment/${id}`);
+      const response = await fetch(`http://16.16.173.47:4000/appointment/${id}`);
       const json = await response.json();
       setData(json);
       console.log(json);
